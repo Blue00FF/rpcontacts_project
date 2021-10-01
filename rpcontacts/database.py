@@ -33,7 +33,7 @@ def create_connection(database_name):
         QMessageBox.warning(
             None,
             "RP Contact",
-            f"Databse Error: {connection.lastError().text()}",
+            f"Database Error: {connection.lastError().text()}",
         )
         return False
 
