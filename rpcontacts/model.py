@@ -21,7 +21,7 @@ class contacts_model:
         # Save changes right away
         table_model.setEditStrategy(QSqlTableModel.OnFieldChange)
         table_model.select()
-        headers = ("ID", "Name", "Job", "Email")
+        headers = ("ID", "Name", "Job", "Email", "Phone", "Twitter", "Webpage")
         for column_index, header in enumerate(headers):
             table_model.setHeaderData(column_index, Qt.Horizontal, header)
         return table_model

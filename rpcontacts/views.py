@@ -129,12 +129,21 @@ class add_dialog(QDialog):
         self.job_field.setObjectName("Job")
         self.email_field = QLineEdit()
         self.email_field.setObjectName("Email")
+        self.phone_field = QLineEdit()
+        self.phone_field.setObjectName("Phone")
+        self.twitter_field = QLineEdit()
+        self.twitter_field.setObjectName("Twitter")
+        self.webpage_field = QLineEdit()
+        self.webpage_field.setObjectName("Webpage")
 
         # Arrange the line edits in a particular form.
         layout = QFormLayout()
         layout.addRow("Name:", self.name_field)
         layout.addRow("Job:", self.job_field)
         layout.addRow("Email:", self.email_field)
+        layout.addRow("Phone:", self.phone_field)
+        layout.addRow("Twitter:", self.twitter_field)
+        layout.addRow("Webpage:", self.webpage_field)
         self.layout.addLayout(layout)
 
         # Add standard buttons to the dialog and connect them.
@@ -152,7 +161,9 @@ class add_dialog(QDialog):
         # The reject slot is built into the dialog, accept isn't
 
         self.data = []
-        for field in (self.name_field, self.job_field, self.email_field):
+        for field in (self.name_field, self.job_field, self.email_field,
+                      self.phone_field, self.twitter_field,
+                      self.webpage_field):
             if not field.text():
                 QMessageBox.critical(
                     self,
